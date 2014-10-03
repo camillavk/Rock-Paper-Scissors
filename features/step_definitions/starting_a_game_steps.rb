@@ -7,7 +7,7 @@ When(/^I follow "(.*?)"$/) do |text|
 end
 
 Then(/^I should see "(.*?)"$/) do |content|
-	expect(page).to have_content "What's your name?"
+	expect(page).to have_content content
 end
 
 Given(/^I am on the sign up page$/) do
