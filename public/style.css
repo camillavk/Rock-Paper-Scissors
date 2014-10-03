@@ -1,0 +1,19 @@
+body {
+	padding-left: 15%;
+	background: #21BEDE;
+	padding-right: 15%;
+
+}
+
+h1 {
+	font-family: Arial;
+	font-size: 3em;
+	font-weight: 500;
+}
+
+a:link {
+	background-color: #085DAD;
+	border-style: solid;
+	font-size: 2em;
+
+}

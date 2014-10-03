@@ -4,9 +4,12 @@ require_relative 'player'
 
 class RPS < Sinatra::Base
 	set :views, Proc.new { File.join(root, '..', "views") }
+	set :public_dir, Proc.new { File.join(root, '..', "public")}
+	set :public_folder, 'public'
 	enable :sessions
 
   get '/' do
+  	@player = session[:player]
     erb :index
   end
 
@@ -23,7 +26,13 @@ class RPS < Sinatra::Base
   end
 
   get '/game' do
+  	@player = session[:player]
+  	@playername
   	erb :game
+  end
+
+  get '/end_game' do
+  	erb :end_game
   end
 
 
