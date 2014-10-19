@@ -1,7 +1,14 @@
 <p>Take your pick <%= @playername %>...</p>
 
-<ul>
-	<li><a href='/end_game'>Rock</a></li>
-	<li><a href='/end_game'>Paper</a></li>
-	<li><a href='/end_game'>Scissors</a></li>
-</ul>
+<!-- <form action='/game' method='post'>
+	<input type='radio' name='choice' value='rock' id='rock'><img src='/images/rock.png'> 
+ -->
+<form action='/choice' method='post'>
+	<input type='radio' name='choice' value='rock'><img src='/images/rock.png' width='50'></a>
+	<input type='radio' name='choice' value='paper'><img src='/images/paper.png' width='50'></a>
+	<input type='radio' name='choice' value='scissors'><img src='/images/sissors-02.png' width='50'></a>
+	<input type='radio' name='choice' value='lizard'><img src='/images/lizard.png' width='50'></a>
+	<input type='radio' name='choice' value='spock'><img src='/images/spock.png' width='50'></a>
+	<input type='submit' value='Lets go!'>
+</form>
+

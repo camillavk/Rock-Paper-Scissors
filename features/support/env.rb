@@ -2,7 +2,7 @@
 
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', '..', 'app/game.rb')
+require File.join(File.dirname(__FILE__), '..', '..', 'app/gameplay.rb')
 
 require 'capybara'
 require 'capybara/cucumber'

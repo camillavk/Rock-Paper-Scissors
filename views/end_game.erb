@@ -1,1 +1,14 @@
-<h1>Congratulations <%= @playername %>, you've won!</h1>
+<% if @player_choice == @game_choice %>
+
+	<p>You've tied with the computer. Would you like to try again?</p>
+	<p><a href='/game'>Bring it on!</a></p>
+
+<% elsif @winning_hash[player_choice] == @game_choice %>
+
+	<p>Congratulations <%= @playername %>, you've won!</p>
+	<p>Would you like to play again?</p>
+	<p><a href='/game'>Br
+
+<% else %>
+
+<% end %>

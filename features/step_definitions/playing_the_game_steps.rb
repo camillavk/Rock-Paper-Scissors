@@ -34,15 +34,16 @@ Then(/^I should be taken to end game page$/) do
   expect(current_path).to eq('/end_game')
 end
 
-Given(/^I have chosen "(.*?)"$/) do |arg1|
+Given(/^I have chosen one of the options$/) do
   visit '/game'
   click_link "Rock"
 end
 
-When(/^I am taken to the end game page$/) do
-  expect(current_path).to eq('/end_game')
+When(/^the computer should also generates a choice$/) do
+  expect(page).to have_content @game_choice
 end
 
-Then(/^I will see "(.*?)"$/) do |text|
-  expect(page).to have_content text
+Then(/^it should be able to compare them and declare a winner$/) do
+  expect(page).to have_content 
 end
+
