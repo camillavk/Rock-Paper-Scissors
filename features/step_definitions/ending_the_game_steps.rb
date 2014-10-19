@@ -1,6 +1,7 @@
 Given(/^I have chosen "(.*?)"$/) do |text|
   visit '/game'
-  click_link "Rock"
+  choose("choice", :option => "rock")
+  click_button "Lets go!"
 end
 
 When(/^I am taken to the end game page$/) do

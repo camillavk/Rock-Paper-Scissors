@@ -27,7 +27,8 @@ Then(/^I should find "(.*?)" and "(.*?)" and "(.*?)"$/) do |one, two, three|
 end
 
 When(/^I click one of the choices$/) do
-  click_link "Rock"
+  choose("choice", :option => "rock")
+  click_button "Lets go!"
 end
 
 Then(/^I should be taken to end game page$/) do
@@ -36,7 +37,8 @@ end
 
 Given(/^I have chosen one of the options$/) do
   visit '/game'
-  click_link "Rock"
+  choose("choice", :option => "rock")
+  click_button "Lets go!"
 end
 
 When(/^the computer should also generates a choice$/) do
