@@ -22,9 +22,4 @@ describe Game do
 		expect(game.player2).to eq(opponent)
 	end
 
-	it "can add a choice" do
-		game.add_choice(rock)
-		expect(game.choices).to include(rock)
-	end
-
 end

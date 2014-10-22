@@ -1,15 +1,14 @@
 Given(/^I have signed up$/) do
   visit '/new_player'
   fill_in :playername, :with => :playername
-  click_button "Register"
 end
 
 When(/^I click on "(.*?)"$/) do |text|
-  click_link text
+  click_button "Register"
 end
 
 Then(/^I should  go to the game page$/) do
-  expect(current_path).to eq('/game')
+  expect(current_path).to eq('/')
 end
 
 Given(/^I am on the game page$/) do
@@ -27,7 +26,7 @@ Then(/^I should find "(.*?)" and "(.*?)" and "(.*?)"$/) do |one, two, three|
 end
 
 When(/^I click one of the choices$/) do
-  choose("choice", :option => "rock")
+  choose("choice", :option => "Rock")
   click_button "Lets go!"
 end
 
@@ -37,11 +36,11 @@ end
 
 Given(/^I have chosen one of the options$/) do
   visit '/game'
-  choose("choice", :option => "rock")
+  choose("choice", :option => "Rock")
   click_button "Lets go!"
 end
 
-When(/^the computer should also generates a choice$/) do
+When(/^the computer should also generate a choice$/) do
   expect(page).to have_content @game_choice
 end
 

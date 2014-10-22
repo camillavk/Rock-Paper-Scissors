@@ -7,11 +7,7 @@ class Game
   end
 
   def add_player(player)
-    self.player1 ?  self.player2 = player : self.player1 = player
-  end
-
-  def add_choice(choice)
-    choices << choice
+    self.player1 ? self.player2 = player : self.player1 = player
   end
 
   def random_choice

@@ -19,10 +19,11 @@ When(/^I enter my name$/) do
   click_button "Register"
 end
 
-When(/^I am taken to the game page$/) do
-	expect(current_path).to eq('/game')
+When(/^I am taken to the home page$/) do
+	expect(current_path).to eq('/')
 end
 
 Then(/^I should view "(.*?)"$/) do |text|
   expect(page).to have_content text
 end
+

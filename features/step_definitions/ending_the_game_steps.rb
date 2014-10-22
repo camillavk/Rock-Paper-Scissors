@@ -1,6 +1,6 @@
 Given(/^I have chosen "(.*?)"$/) do |text|
   visit '/game'
-  choose("choice", :option => "rock")
+  choose("choice", :option => "Rock")
   click_button "Lets go!"
 end
 

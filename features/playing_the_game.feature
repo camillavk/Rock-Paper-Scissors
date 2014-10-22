@@ -3,27 +3,23 @@ Feature: Playing the game
 	As a player
 	I want to choose between Rock, Paper and Scissors
 
-@ignore
 Scenario: Entering the game
 	Given I have signed up
-	When I click on "Bring it on!"
+	When I click on "Register"
 	Then I should  go to the game page
 
-@ignore
 Scenario: Given a choice
 	Given I am on the game page
 	When I see "Take your pick"
 	Then I should find "Rock" and "Paper" and "Scissors"
 
-@ignore
 Scenario: I can pick one of the three
 	Given I am on the game page
 	When I click one of the choices
 	Then I should be taken to end game page
 
-@ignore
 Scenario: The computer can randomly generate a choice
 	Given I have chosen one of the options
-	When the computer should also generates a choice
+	When the computer should also generate a choice
 	Then it should be able to compare them and declare a winner
 

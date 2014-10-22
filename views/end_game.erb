@@ -1,14 +1,39 @@
-<% if @player_choice == @game_choice %>
+<% if @choice1 && @choice2 %>
 
-	<p>You've tied with the computer. Would you like to try again?</p>
-	<p><a href='/game'>Bring it on!</a></p>
+<section id="results">
+	<article id="result">
+		<p>Player 1 chose: <%= @choice1.name %> </p>
+		<p>Player 2 chose: <%= @choice2.name %> </p>
+	
+		<% if @choice2.class == @choice1.class %>
+			<p id="result">DRAW, NO ONE WINS!</p>
 
-<% elsif @winning_hash[player_choice] == @game_choice %>
+			<p>Would you like to try again?</p>
+			<p><a href='/game'>Bring it on!</a></p>
 
-	<p>Congratulations <%= @playername %>, you've won!</p>
-	<p>Would you like to play again?</p>
-	<p><a href='/game'>Br
+
+		<% elsif (@choice2.class == Rock && @choice1.beat_rock) || (@choice2.class == Scissors && @choice1.beat_scissors) || (@choice2.class == Paper && @choice1.beat_paper) || (@choice2.class == Spock && @choice1.beat_spock) || (@choice2.class == Lizard && @choice1.beat_lizard) %>
+			<p><%= @choice1.name %> beats <%= @choice2.name %>.</p>
+			<p id="result"><%= @player1 %> WINS!</p>
+		<% else %>
+			<p><%= @choice2.name %> beats <%= @choice1.name %>.</p>
+			<p id="result">
+				<% if @player2.nil? %>
+					Computer WINS!
+				<% else %>
+					<%= @player2 %> WINS!
+				<% end %>
+			</p>
+
+			<p>Would you like to play again?</p>
+			<p><a href='/game'>Bring it on!</a></p>
+
+		<% end %>
+	</article>
+</section>
 
 <% else %>
-
+	<h1>Waiting for all players to make their pick...</h1>
 <% end %>
+	
+
